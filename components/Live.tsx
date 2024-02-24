@@ -115,7 +115,7 @@ const Live = () => {
         setCursorState({ mode: CursorMode.Hidden });
       }
 
-      if (event.key === 'e' && cursorState.mode !== CursorMode.Chat) {
+      if (event.key === 'e') {
         setCursorState({
           mode: CursorMode.ReactionSelector,
         })
@@ -135,7 +135,7 @@ const Live = () => {
       window.removeEventListener('keyup', onKeyUp);
       window.removeEventListener('keydown', onKeyDown);
     }
-  }, [updateMyPresence, cursorState.mode])
+  }, [updateMyPresence])
 
   const setReaction = useCallback((reaction: string) => {
     setCursorState({ mode: CursorMode.Reaction, reaction, isPressed: false });
